@@ -2,6 +2,7 @@ package com.example.elibrary.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.elibrary.R;
 import com.example.elibrary.models.BookResponse.Doc;
+import com.example.elibrary.ui.BookDetail;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -46,7 +50,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         return mBooks.size();
     }
 
-    public class BookViewHolder extends RecyclerView.ViewHolder {
+    public class BookViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.bookImageView) ImageView mBookImageView;
         @BindView(R.id.bookNameTextView) TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
@@ -57,6 +61,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         @SuppressLint("SetTextI18n")
@@ -66,5 +71,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             mCategoryTextView.setText(String.valueOf(book.getAuthorName()).replaceAll("[]\\[\\]]",""));
             mRatingTextView.setText("Publisher: " + book.getPublisher().get(0));
         }
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, BookDetail.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("books", Parcels.wrap(mBooks));
+            mContext.startActivity(intent);
+        }
     }
+
 }
