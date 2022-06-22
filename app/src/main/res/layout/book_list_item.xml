@@ -8,7 +8,6 @@
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:id="@+id/bookImageView"
-        android:src="waffles"
         android:scaleType="centerCrop"/>
 
     <LinearLayout
@@ -28,11 +27,12 @@
             android:textColor="@color/white"/>
 
         <TextView
+            android:id="@+id/categoryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Authors"
-            android:id="@+id/categoryTextView"
-            android:textStyle="italic"/>
+            android:textColor="@color/white"
+            android:textStyle="italic" />
 
         <RelativeLayout
             android:layout_width="match_parent"

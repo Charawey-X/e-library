@@ -62,8 +62,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         public void bindBook(Doc book) {
             //mBookImageView.setImageBitmap(book.);
             mNameTextView.setText(book.getTitle());
-            mCategoryTextView.setText(String.valueOf(book.getAuthorName()));
-            mRatingTextView.setText("Publisher: " + String.valueOf(book.getPublisher()));
+            mCategoryTextView.setText(String.valueOf(book.getAuthorName()).replaceAll("[]\\[\\]]",""));
+            mRatingTextView.setText("Publisher: " + book.getPublisher().get(0));
         }
     }
 }
