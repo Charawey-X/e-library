@@ -1,12 +1,12 @@
 
-package com.example.elibrary.models;
+package com.example.elibrary.models.Description;
 
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Type {
+public class Author__1 {
 
     @SerializedName("key")
     @Expose
@@ -16,14 +16,14 @@ public class Type {
      * No args constructor for use in serialization
      * 
      */
-    public Type() {
+    public Author__1() {
     }
 
     /**
      * 
      * @param key;
      */
-    public Type(String key) {
+    public Author__1(String key) {
         super();
         this.key = key;
     }

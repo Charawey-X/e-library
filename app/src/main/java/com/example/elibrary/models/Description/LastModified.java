@@ -1,5 +1,5 @@
 
-package com.example.elibrary.models;
+package com.example.elibrary.models.Description;
 
 
 import com.google.gson.annotations.Expose;

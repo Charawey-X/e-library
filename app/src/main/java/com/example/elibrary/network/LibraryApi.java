@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface LibraryApi {
-    @GET("/search.json")
+    @GET("search.json")
     Call<BookResponse> getResults(
             @Query("q") String book
     );

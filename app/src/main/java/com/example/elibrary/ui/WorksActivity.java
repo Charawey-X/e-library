@@ -13,6 +13,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.elibrary.R;
+import com.example.elibrary.adapters.BookAdapter;
+import com.example.elibrary.models.BookResponse.BookResponse;
+import com.example.elibrary.models.BookResponse.Doc;
+import com.example.elibrary.network.LibraryApi;
+import com.example.elibrary.network.LibraryClient;
 
 import java.util.List;
 
@@ -24,8 +29,7 @@ import retrofit2.Response;
 
 public class WorksActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.listView)
-    ListView mListView;
+    @BindView(R.id.listView) ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,37 +38,36 @@ public class WorksActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
         Intent intent = getIntent();
-        String artist = intent.getStringExtra("artist");
+        String book = intent.getStringExtra("book");
 
-        GeniusApi client = GeniusClient.getClient();
-        Call<SearchResponse> call = client.getResults("RapidAPI-Playground",Constants.GENIUS_API_KEY,"genius.p.rapidapi.com",Constants.GENIUS_API_KEY, artist);
+        LibraryApi client = LibraryClient.getClient();
+        Call<BookResponse> call = client.getResults(book);
 
-        call.enqueue(new Callback<SearchResponse>() {
+        call.enqueue(new Callback<BookResponse>() {
             @Override
-            public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
+            public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
                 hideProgressBar();
                 if(response.isSuccessful()){
-                    List<Hit> hitList = response.body().getResponse().getHits();
-                    String [] hits = new String[hitList.size()];
-                    String [] artists = new String[hitList.size()];
+                    List<Doc> bookList = response.body().getDocs();
+                    String [] books = new String[bookList.size()];
+                    String [] authors = new String[bookList.size()];
 
-                    for (int i = 0; i < hits.length; i++){
-                        hits[i] = hitList.get(i).getResult().getFullTitle();
+                    for (int i = 0; i < books.length; i++){
+                        books[i] = bookList.get(i).getTitle();
                     }
 
-                    for (int i = 0; i < artists.length; i++) {
-                        PrimaryArtist artist = hitList.get(i).getResult().getPrimaryArtist();
-                        artists[i] = artist.getName();
+                    for (int i = 0; i < authors.length; i++) {
+                        authors[i] = String.valueOf(bookList.get(i).getAuthorName());
                     }
 
-                    ArrayAdapter adapter = new ListAdapter(ListActivity.this, android.R.layout.simple_list_item_1, hits, artists);
+                    ArrayAdapter adapter = new BookAdapter(WorksActivity.this, android.R.layout.simple_list_item_1, books, authors);
                     mListView.setAdapter(adapter);
                     showSongs();
                 } else showUnsuccessfulMessage();
             }
 
             @Override
-            public void onFailure(Call<SearchResponse> call, Throwable t) {
+            public void onFailure(Call<BookResponse> call, Throwable t) {
                 Log.e("Error Message", "onFailure: ",t );
                 hideProgressBar();
                 showFailureMessage();
@@ -72,7 +75,7 @@ public class WorksActivity extends AppCompatActivity {
         });
     }
 
-    private static final String TAG = ListActivity.class.getSimpleName();
+    private static final String TAG = WorksActivity.class.getSimpleName();
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.errorTextView)
     TextView mErrorTextView;
@@ -92,7 +95,7 @@ public class WorksActivity extends AppCompatActivity {
 
     private void showSongs() {
         mListView.setVisibility(View.VISIBLE);
-        songTextView.setVisibility(View.VISIBLE);
+        //songTextView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
