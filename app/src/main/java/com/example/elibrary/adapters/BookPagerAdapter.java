@@ -16,7 +16,7 @@ public class BookPagerAdapter  extends FragmentPagerAdapter {
 
     public BookPagerAdapter(@NonNull FragmentManager fm, int behavior, List<Doc> books) {
         super(fm, behavior);
-        books = books;
+        this.books = books;
     }
 
     @Override

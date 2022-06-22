@@ -63,6 +63,16 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             mContext = itemView.getContext();
             itemView.setOnClickListener(this);
         }
+        @Override
+        public void onClick(View v) {
+            if(v==itemView){
+                int itemPosition = getLayoutPosition();
+                Intent intent = new Intent(mContext, BookDetail.class);
+                intent.putExtra("position", itemPosition);
+                intent.putExtra("books", Parcels.wrap(mBooks));
+                mContext.startActivity(intent);
+            }
+        }
 
         @SuppressLint("SetTextI18n")
         public void bindBook(Doc book) {
@@ -70,14 +80,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             mNameTextView.setText(book.getTitle());
             mCategoryTextView.setText(String.valueOf(book.getAuthorName()).replaceAll("[]\\[\\]]",""));
             mRatingTextView.setText("Publisher: " + book.getPublisher().get(0));
-        }
-        @Override
-        public void onClick(View v) {
-            int itemPosition = getLayoutPosition();
-            Intent intent = new Intent(mContext, BookDetail.class);
-            intent.putExtra("position", itemPosition);
-            intent.putExtra("books", Parcels.wrap(mBooks));
-            mContext.startActivity(intent);
         }
     }
 

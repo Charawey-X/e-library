@@ -51,7 +51,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brunch, American"
                 android:id="@+id/authorTextView"
                 android:layout_below="@+id/bookNameTextView"
                 android:layout_alignParentLeft="true"
@@ -84,7 +83,6 @@
                     android:drawableLeft="@drawable/ic_baseline_exit_to_app_24"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="View on Yelp"
                     android:textColor="@color/white"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -97,7 +95,6 @@
                     android:drawableLeft="@drawable/ic_baseline_call_24"
                     android:drawablePadding="4dp"
                     android:gravity="center"
-                    android:text="(503) 223-1282"
                     android:textColor="@color/white"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -106,7 +103,6 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
                 android:id="@+id/saveBookButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/white"
