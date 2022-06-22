@@ -1,6 +1,8 @@
 package com.example.elibrary.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -28,8 +30,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class WorksActivity extends AppCompatActivity {
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    private BookAdapter mAdapter;
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    public List<Doc> books;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,23 +53,19 @@ public class WorksActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
                 hideProgressBar();
-                if(response.isSuccessful()){
-                    List<Doc> bookList = response.body().getDocs();
-                    String [] books = new String[bookList.size()];
-                    String [] authors = new String[bookList.size()];
+                if (response.isSuccessful()) {
+                    books = response.body().getDocs();
+                    mAdapter = new BookAdapter(WorksActivity.this, books);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(WorksActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
 
-                    for (int i = 0; i < books.length; i++){
-                        books[i] = bookList.get(i).getTitle();
-                    }
-
-                    for (int i = 0; i < authors.length; i++) {
-                        authors[i] = String.valueOf(bookList.get(i).getAuthorName());
-                    }
-
-                    ArrayAdapter adapter = new BookAdapter(WorksActivity.this, android.R.layout.simple_list_item_1, books, authors);
-                    mListView.setAdapter(adapter);
-                    showSongs();
-                } else showUnsuccessfulMessage();
+                    showBooks();
+                } else {
+                    showUnsuccessfulMessage();
+                }
             }
 
             @Override
@@ -76,12 +78,6 @@ public class WorksActivity extends AppCompatActivity {
     }
 
     private static final String TAG = WorksActivity.class.getSimpleName();
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.errorTextView)
-    TextView mErrorTextView;
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.progressBar)
-    ProgressBar mProgressBar;
 
     private void showFailureMessage() {
         mErrorTextView.setText("Something went wrong. Please check your Internet connection and try again later");
@@ -93,8 +89,8 @@ public class WorksActivity extends AppCompatActivity {
         mErrorTextView.setVisibility(View.VISIBLE);
     }
 
-    private void showSongs() {
-        mListView.setVisibility(View.VISIBLE);
+    private void showBooks() {
+        mRecyclerView.setVisibility(View.VISIBLE);
         //songTextView.setVisibility(View.VISIBLE);
     }
 
