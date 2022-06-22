@@ -2,11 +2,10 @@
 package com.example.elibrary.models;
 
 import java.util.List;
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
+
 public class WorksResponse {
 
     @SerializedName("description")
@@ -64,21 +63,21 @@ public class WorksResponse {
 
     /**
      * 
-     * @param created
-     * @param subjects
-     * @param description
-     * @param title
-     * @param type
-     * @param revision
-     * @param subjectPlaces
-     * @param subjectTimes
-     * @param subjectPeople
-     * @param location
-     * @param lastModified
-     * @param latestRevision
-     * @param key
-     * @param covers
-     * @param authors
+     * @param created;
+     * @param subjects;
+     * @param description;
+     * @param title;
+     * @param type;
+     * @param revision;
+     * @param subjectPlaces;
+     * @param subjectTimes;
+     * @param subjectPeople;
+     * @param location;
+     * @param lastModified;
+     * @param latestRevision;
+     * @param key;
+     * @param covers;
+     * @param authors;
      */
     public WorksResponse(String description, String title, List<Integer> covers, List<String> subjectPlaces, List<String> subjects, List<String> subjectPeople, String key, List<Author> authors, List<String> subjectTimes, Type__1 type, String location, Integer latestRevision, Integer revision, Created created, LastModified lastModified) {
         super();

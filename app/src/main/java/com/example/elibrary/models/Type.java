@@ -1,11 +1,11 @@
 
 package com.example.elibrary.models;
 
-import javax.annotation.Generated;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
+
 public class Type {
 
     @SerializedName("key")
@@ -21,7 +21,7 @@ public class Type {
 
     /**
      * 
-     * @param key
+     * @param key;
      */
     public Type(String key) {
         super();

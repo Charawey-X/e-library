@@ -1,11 +1,9 @@
 
 package com.example.elibrary.models;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
 public class Author {
 
     @SerializedName("author")
@@ -24,8 +22,8 @@ public class Author {
 
     /**
      * 
-     * @param author
-     * @param type
+     * @param author;
+     * @param type;
      */
     public Author(Author__1 author, Type type) {
         super();

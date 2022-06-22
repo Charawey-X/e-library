@@ -1,2 +1,4 @@
-package com.example.elibrary.network;public interface LibraryApi {
+package com.example.elibrary.network;
+
+public interface LibraryApi {
 }
