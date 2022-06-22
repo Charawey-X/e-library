@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.elibrary.R;
 import com.example.elibrary.models.BookResponse.Doc;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     public int getItemCount() {
         return mBooks.size();
     }
-    
+
     public class BookViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.bookImageView) ImageView mBookImageView;
         @BindView(R.id.bookNameTextView) TextView mNameTextView;
@@ -60,7 +61,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
         @SuppressLint("SetTextI18n")
         public void bindBook(Doc book) {
-            //mBookImageView.setImageBitmap(book.);
+            Picasso.get().load("https://covers.openlibrary.org/b/olid/"+book.getCoverEditionKey()+"-M.jpg").into(mBookImageView);
             mNameTextView.setText(book.getTitle());
             mCategoryTextView.setText(String.valueOf(book.getAuthorName()).replaceAll("[]\\[\\]]",""));
             mRatingTextView.setText("Publisher: " + book.getPublisher().get(0));
