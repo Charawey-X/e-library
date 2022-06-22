@@ -47,5 +47,4 @@
                 android:textColor="@color/teal_700"/>
         </RelativeLayout>
     </LinearLayout>
-
 </LinearLayout>
