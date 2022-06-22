@@ -43,6 +43,7 @@ public class WorksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_works);
 
         ButterKnife.bind(this);
+        mRecyclerView.setNestedScrollingEnabled(true);
         Intent intent = getIntent();
         String book = intent.getStringExtra("book");
 

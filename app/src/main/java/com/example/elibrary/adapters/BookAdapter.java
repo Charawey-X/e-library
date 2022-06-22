@@ -44,7 +44,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     public int getItemCount() {
         return mBooks.size();
     }
-
+    
     public class BookViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.bookImageView) ImageView mBookImageView;
         @BindView(R.id.bookNameTextView) TextView mNameTextView;
