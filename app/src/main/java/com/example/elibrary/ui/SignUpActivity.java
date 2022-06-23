@@ -46,7 +46,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         ButterKnife.bind(this);
         back.setOnClickListener(v -> {
-            Intent intentBack = new Intent(SignUpActivity.this, MainActivity.class);
+            Intent intentBack = new Intent(SignUpActivity.this, SearchActivity.class);
             startActivity(intentBack);
         });
         logInstead.setOnClickListener(v -> {
