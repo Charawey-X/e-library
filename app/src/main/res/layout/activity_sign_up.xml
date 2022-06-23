@@ -64,7 +64,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
-        android:textColor="#990000"
+        android:textColor="#FFFFFF"
         android:textColorHint="#000000" />
 
     <!-- Email -->
@@ -86,7 +86,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
-        android:textColor="#990000"
+        android:textColor="#FFFFFF"
         android:textColorHint="#000000" />
 
     <!-- Password -->
@@ -107,7 +107,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
-        android:textColor="#990000"
+        android:textColor="#FFFFFF"
         android:textColorHint="#000000" />
 
     <!-- Confirm Password -->
@@ -128,7 +128,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
-        android:textColor="#990000"
+        android:textColor="#FFFFFF"
         android:textColorHint="#000000" />
 
     <!-- Sign Up -->

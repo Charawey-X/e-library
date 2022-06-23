@@ -15,8 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
-    @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.searchInput) EditText searchInput;
+
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.submit) Button submit;
     @SuppressLint("NonConstantResourceId")
@@ -38,9 +37,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
 
         if(v == submit) {
-            String book = searchInput.getText().toString();
             Intent intent = new Intent(SearchActivity.this, WorksActivity.class);
-            intent.putExtra("book", book);
             startActivity(intent);
         }
 
