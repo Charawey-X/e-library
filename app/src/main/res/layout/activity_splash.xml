@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,18 +14,18 @@
 
     <TextView
         android:id="@+id/app_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="150dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/muse"
         android:textAlignment="center"
-        android:textColor="#990000"
+        android:textColor="#E8E4CB"
         android:textSize="80sp" />
 
     <TextView
@@ -39,7 +40,7 @@
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/search_artists_songs_lyrics"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="#E8E4CB"
         android:textSize="20sp" />
 
     <!-- Line 1 -->
@@ -51,6 +52,6 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="80dp"
-        android:background="#000000" />
+        android:background="#E8E4CB" />
 
 </RelativeLayout>
