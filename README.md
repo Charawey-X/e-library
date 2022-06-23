@@ -1,7 +1,7 @@
 # E Library
 
 
-![](img.png=250x200)
+<img src="img.png" width="250" height="150">
 
 
 - [Description](#description)
