@@ -19,7 +19,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.textView) EditText searchInput;
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.button) Button submit;
-    @BindView(R.id.savedBooksButton) Button mSavedBooksButton;
+
 
 
     @Override
@@ -29,7 +29,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         ButterKnife.bind(this);
         submit.setOnClickListener(this);
-        mSavedBooksButton.setOnClickListener(this);
     }
 
     @Override
@@ -39,11 +38,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             String book = searchInput.getText().toString();
             Intent intent = new Intent(SearchActivity.this, WorksActivity.class);
             intent.putExtra("book", book);
-            startActivity(intent);
-        }
-
-        if (v == mSavedBooksButton) {
-            Intent intent = new Intent(SearchActivity.this, WorksActivity.class);
             startActivity(intent);
         }
     }
