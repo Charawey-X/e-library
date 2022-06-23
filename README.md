@@ -1,7 +1,7 @@
 # E Library
 
 
-<img src="img.png" width="250" height="150">
+<img src="img.png" width="300" height="600">
 
 
 - [Description](#description)
