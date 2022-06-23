@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image">
+
+    <TextView
+        android:id="@+id/userNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp" />
+
+    <!-- Search Banner -->
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="91dp"
+        android:layout_marginBottom="91dp"
+        android:background="@drawable/rectangle_4" />
+
+    <!-- Search Form -->
+    <TextView
+        android:id="@+id/search_form"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:gravity="center_horizontal|center_vertical"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/search_form"
+        android:textAlignment="center"
+        android:textAppearance="@style/search_form"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <!-- Submit Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit"
+        android:layout_width="232dp"
+        android:layout_height="58dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/sign_log"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/submit"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <!-- Cancel Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel"
+        android:layout_width="232dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/submit"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/sign_log"
+        android:elevation="4dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="@string/cancel"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+</RelativeLayout>
