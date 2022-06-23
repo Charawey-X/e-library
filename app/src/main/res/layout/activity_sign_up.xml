@@ -65,7 +65,7 @@
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
         android:textColor="#990000"
-        android:textColorHint="#795548" />
+        android:textColorHint="#000000" />
 
     <!-- Email -->
     <EditText
@@ -87,7 +87,7 @@
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
         android:textColor="#990000"
-        android:textColorHint="#795548" />
+        android:textColorHint="#000000" />
 
     <!-- Password -->
     <EditText
@@ -108,7 +108,7 @@
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
         android:textColor="#990000"
-        android:textColorHint="#795548" />
+        android:textColorHint="#000000" />
 
     <!-- Confirm Password -->
     <EditText
@@ -129,7 +129,7 @@
         android:paddingEnd="15dp"
         android:textAlignment="viewEnd"
         android:textColor="#990000"
-        android:textColorHint="#795548" />
+        android:textColorHint="#000000" />
 
     <!-- Sign Up -->
     <androidx.appcompat.widget.AppCompatButton
@@ -148,7 +148,7 @@
         android:text="@string/sign_up"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#FEDE64"
+        android:textColor="@color/black"
         android:textSize="24sp" />
 
     <!-- or -->
@@ -167,13 +167,14 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/or"
         android:textAppearance="@style/or"
+        android:textColor="#FFFFFF"
         tools:ignore="UseCompatTextViewDrawableXml" />
 
     <!-- Continue -->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/google_button"
         android:layout_width="232dp"
-        android:layout_height="48dp"
+        android:layout_height="60dp"
         android:layout_below="@id/or"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -189,31 +190,10 @@
         android:text="@string/continue_with_google"
         android:textAlignment="viewEnd"
         android:textAllCaps="false"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="15sp" />
 
     <!-- Continue -->
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/facebook_button"
-        android:layout_width="232dp"
-        android:layout_height="48dp"
-        android:layout_below="@id/google_button"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="624dp"
-        android:background="@drawable/continue_button"
-        android:drawableStart="@drawable/facebook"
-        android:elevation="4dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        android:text="@string/continue_with_facebook"
-        android:textAlignment="viewEnd"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="15sp" />
 
     <!-- Already have an account? Log In -->
     <TextView
@@ -230,7 +210,7 @@
         android:fontFamily="@font/poppins_bold"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/already_have_an_account_log_in"
-        android:textColor="#990000"
+        android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
 </RelativeLayout>
