@@ -20,9 +20,9 @@
     <string name="username_or_email_address">Username/Email Address</string>
     <string name="log_in">LOG IN</string>
     <string name="don_t_have_an_account_sign_up">Don\'t have an account? <i>Sign Up</i></string>
-    <string name="search_form">Search Form</string>
+    <string name="search_form">View previously searched books or find new books!</string>
     <string name="enter_song_artist">Enter Book Title/Author</string>
-    <string name="submit">SUBMIT</string>
+    <string name="submit">SEARCH</string>
     <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
     <string name="user">Hi, %1$s!</string>
 </resources>

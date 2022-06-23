@@ -21,12 +21,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="140dp"
         android:fontFamily="@font/poppins_extrabold"
         android:text="@string/muse"
         android:textAlignment="center"
         android:textColor="#E8E4CB"
-        android:textSize="80sp" />
+        android:textSize="70sp" />
 
     <TextView
         android:id="@+id/text_home_page"
